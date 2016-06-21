@@ -13,10 +13,14 @@
 			Hide Finished Resolutions
 		</label>
 
+		<!-- User must be logged in to create resolution -->
+		{{#if currentUser}}
 		<form class="new-resolution">
 			<input type="text" name="title" placeholder="A new resolution">
 			<input type="submit" value="Add">
 		</form>
+		{{/if}} 
+
 	</header>
 
 		<ul>
@@ -24,6 +28,7 @@
 		 		{{> resolution}}
 		 	{{/each}}
 	 	</ul>
+	 {{> loginButtons}}
 </div>
 
 </body>
