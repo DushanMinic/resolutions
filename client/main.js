@@ -22,10 +22,7 @@ Template.body.events({
 
 		const title = event.target.title.value;
 
-		Resolutions.insert({
-			title : title,
-			createdAt: new Date(),
-		});
+		Meteor.call('addResolution', title);
 
 		event.target.title.value = '';
 	},
@@ -36,10 +33,10 @@ Template.body.events({
 
 Template.resolution.events({
 	'click .toggle-checked' () {
-		Resolutions.update(this._id, { $set: { checked: !this.checked} });
+		Meteor.call('updateResolution', this._id, !this.checked);
 	},
 	'click .delete' () {
-		Resolutions.remove(this._id);
+		Meteor.call('deleteResolution', this._id);
 	},
 });
 
