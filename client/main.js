@@ -2,6 +2,9 @@ import './main.html';
 import { Resolutions } from '../imports/collections/resolutions.js';
 import { Session } from 'meteor/session';
 
+ 
+Meteor.subscribe('resolutions');
+
 Template.body.helpers({
 	resolutions () {
 		if (Session.get('hideFinished')) {
@@ -12,6 +15,12 @@ Template.body.helpers({
 	},
 	hideFinished () {
 		return Session.get('hideFinished');
+	},
+});
+
+Template.resolution.helpers({
+	isOwner () {
+		return this.owner === Meteor.userId();
 	},
 });
 
@@ -37,6 +46,9 @@ Template.resolution.events({
 	},
 	'click .delete' () {
 		Meteor.call('deleteResolution', this._id);
+	},
+	'click .toggle-private' () {
+		Meteor.call('setPrivate', this._id, !this.private);
 	},
 });
 
