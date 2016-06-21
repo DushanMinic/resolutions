@@ -24,6 +24,10 @@
 </body>
 
 <template name="resolution">
-	<li>{{title}}</li>
+	<li class="{{#if checked}}checked{{/if}}">
+		<input type="checkbox" class="toggle-checked" checked="{{checked}}">
+		<span class="text">{{title}}</span>
+		<button class="delete">Remove</button>
+	</li>
 </template>
 
