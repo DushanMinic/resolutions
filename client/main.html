@@ -22,11 +22,10 @@
 			<span class="loginButtons">Welcome {{> loginButtons}}</span> 
 		</form>
 		{{else}}
-			<form class="new-resolution">
-			<input type="text" name="title" placeholder="A new resolution">
-			<button type="submit"><i class="fa fa-hand-o-up" aria-hidden="true"></i>  Add</button>
-			<span class="loginButtons">Welcome {{> loginButtons}}</span> 
-		</form>
+			<form>
+				<span style="color:red;">Sign in to create your own private resolutions!</span>
+				<span class="loginButtons">Please {{> loginButtons}}</span> 
+			</form>
 		{{/if}} 
 
 
