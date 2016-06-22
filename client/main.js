@@ -10,7 +10,7 @@ Template.body.helpers({
 		if (Session.get('hideFinished')) {
 			return Resolutions.find({ checked: { $ne: true } });
 		} else {
-			return Resolutions.find({}, { sort: { createdAt: -1} });
+			return Resolutions.find({ "owner" : Meteor.userId() }, { sort: { createdAt: -1} });
 		}
 	},
 	hideFinished () {

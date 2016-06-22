@@ -21,7 +21,14 @@
 			<button type="submit"><i class="fa fa-hand-o-up" aria-hidden="true"></i>  Add</button>
 			<span class="loginButtons">Welcome {{> loginButtons}}</span> 
 		</form>
+		{{else}}
+			<form class="new-resolution">
+			<input type="text" name="title" placeholder="You must be logged in to add Resolutions!">
+			<span class="loginButtons">Welcome {{> loginButtons}}</span> 
+		</form>
 		{{/if}} 
+
+
 
 	</header>
 
