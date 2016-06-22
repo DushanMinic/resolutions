@@ -22,10 +22,10 @@
 			<span class="loginButtons">Welcome {{> loginButtons}}</span> 
 		</form>
 		{{else}}
-			<form class="new-resolution">
-			<input type="text" name="title" placeholder="You must be logged in to add Resolutions!">
-			<span class="loginButtons">Welcome {{> loginButtons}}</span> 
-		</form>
+			<form>
+				<span style="color:red;">You must be logged in to add resolutions!</span>
+				<span class="loginButtons">Please {{> loginButtons}}</span> 
+			</form>
 		{{/if}} 
 
 
@@ -49,13 +49,16 @@
 	<li class="{{#if checked}}checked{{/if}}">
 		{{#if isOwner}}
 		<input type="checkbox" class="toggle-checked" checked="{{checked}}">
-			<button class="toggle-private">
+
+		<!-- CURRENTLY DISABLED -->
+			<!-- <button class="toggle-private">
 				{{#if private}}
 					Private
 				{{else}}
 					Public
 				{{/if}}
-			</button>
+			</button> -->
+
 		{{/if}}
 		<span class="text">{{title}}</span>
 		{{#if isOwner}}

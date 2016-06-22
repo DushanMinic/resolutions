@@ -8,7 +8,7 @@ Meteor.subscribe('resolutions');
 Template.body.helpers({
 	resolutions () {
 		if (Session.get('hideFinished')) {
-			return Resolutions.find({ checked: { $ne: true } });
+			return Resolutions.find({ "owner" : Meteor.userId(), checked: { $ne: true } });
 		} else {
 			return Resolutions.find({ "owner" : Meteor.userId() }, { sort: { createdAt: -1} });
 		}
