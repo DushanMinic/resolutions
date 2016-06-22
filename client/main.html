@@ -11,13 +11,15 @@
 		<label class="hide-finished">
 			<input type="checkbox" checked="{{hideFinished}}">
 			Hide Finished Resolutions
+			<i class="fa fa-github gitHub" aria-hidden="true"><a href="https://github.com/DushanMinic/resolutions">GitHub</a></i>
 		</label>
 
 		<!-- User must be logged in to create resolution -->
 		{{#if currentUser}}
 		<form class="new-resolution">
 			<input type="text" name="title" placeholder="A new resolution">
-			<input type="submit" value="Add">
+			<button type="submit"><i class="fa fa-hand-o-up" aria-hidden="true"></i>  Add</button>
+			<span class="loginButtons">Welcome {{> loginButtons}}</span> 
 		</form>
 		{{/if}} 
 
@@ -28,7 +30,10 @@
 		 		{{> resolution}}
 		 	{{/each}}
 	 	</ul>
-	 {{> loginButtons}}
+
+
+
+	 <footer class="footer">All Rights Reserved @ Dusan Minic, 2016</footer>
 </div>
 
 </body>
