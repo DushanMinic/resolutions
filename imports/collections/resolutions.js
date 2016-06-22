@@ -10,7 +10,7 @@ Meteor.methods({
 		Resolutions.insert({
 			title : title,
 			createdAt: new Date(),
-			owner: Meteor.userId(),
+			
 		});
 	},
 	'deleteResolution' (id) {
